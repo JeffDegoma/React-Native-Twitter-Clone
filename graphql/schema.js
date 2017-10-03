@@ -6,6 +6,10 @@ scalar Date
         message: String!
     }
 
+    type Auth {
+        token: String!
+    }
+
     type User {
         _id: ID!
         username: String
@@ -33,7 +37,8 @@ scalar Date
         createTweet(text: String!): Tweet
         updateTweet(_id: ID!, text: String): Tweet
         deleteTweet(_id: ID!): Status
-        signup(email: String!, fullName: String!, password: String!, avatar: String, username: String): User
+        signup(email: String!, fullName: String!, password: String!, avatar: String, username: String): Auth
+        login(email: String!, password: String!): Auth
     }
 
     schema {

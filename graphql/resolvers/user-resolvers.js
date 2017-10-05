@@ -26,7 +26,7 @@ export default {
         if(!user.authenticateUser(password)){
             throw new Error("Passwords does not match!")
         }
-        return user;
+        return {token: user.createToken(),};
         } catch(error) {
             throw error
         }
@@ -34,8 +34,8 @@ export default {
 
     me: async(_, args, { user }) => {
         try {
-            await requireAuth(user )
-            return User.findById(user._id)
+            await requireAuth(user)
+            return me;
         } catch(error) {
             throw error
         }

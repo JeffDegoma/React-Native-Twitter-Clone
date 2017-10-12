@@ -26,6 +26,7 @@ export default {
         }   catch(error) {
             throw error
         }
+        console.log("CONTEXT", user)
     },
     updateTweet: async (_, {_id, ...rest}, { user }) => {
         try {

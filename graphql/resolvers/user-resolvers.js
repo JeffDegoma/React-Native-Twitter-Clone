@@ -8,12 +8,10 @@ export default {
         const [firstName, ...lastName] = fullName.split(" ");
         const user = await User.create({ firstName, lastName, ...rest})
         
-        return {
-            token: user.createToken(),
-        }
-       } catch(error) {
+        return {token: user.createToken()}
+        }    catch(error) {
             throw error
-       }
+        }
     },
 
     login: async (_, {email, password}) => { 
@@ -34,8 +32,9 @@ export default {
 
     me: async(_, args, { user }) => {
         try {
-            await requireAuth(user)
-            return User.findById(user._id)
+            const me = await requireAuth(user)
+            
+            return me;
         }   catch(error) {
             throw error
         }

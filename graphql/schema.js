@@ -33,8 +33,10 @@ scalar Date
     }
 
     type Tweet {
-        _id: String!
+        _id: ID!
         text: String!
+        user: User!
+        favoriteCount: Int!
         createdAt: Date!
         updatedAt: Date!
     }

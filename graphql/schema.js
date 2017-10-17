@@ -43,6 +43,7 @@ scalar Date
 
     type Query {
         getTweet(_id: ID!): Tweet
+        getUserTweets: [Tweet]
         getTweets: [Tweet]
         me: Me
     }

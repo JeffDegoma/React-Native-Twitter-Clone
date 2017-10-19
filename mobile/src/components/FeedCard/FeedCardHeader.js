@@ -11,22 +11,44 @@ const Root = styled.View`
   height: 50;
   flexDirection: row;
   alignItems: center;
-  backgroundColor: yellow;
-
 `;
 
 //avatar container
 const AvatarContainer = styled.View`
   flex: 0.2;
-  backgroundColor: red;
   alignSelf: stretch;
   justifyContent: center;
+  paddingLeft: 10px;
 `;
 //meta container
 const MetaContainer = styled.View`
   flex:1;
-  backgroundColor: blue;
   alignSelf: stretch;
+`;
+
+const MetaTopContainer = styled.View`
+  flex: 1
+  flexDirection: row;
+  alignSelf: stretch;
+  alignItems: center
+`;
+
+const MetaBottomContainer = styled.View`
+  flex: 0.8
+  alignSelf: stretch
+`;
+
+const MetaFullName = styled.Text`
+  fontSize: 16;
+  fontWeight: bold;
+  color: ${props => props.theme.SECONDARY};
+`;
+
+
+const MetaText = styled.Text`
+  fontSize: 14;
+  fontWeight: 600;
+  color: ${props => props.theme.LIGHT_GRAY};
 `;
 
 //avatar
@@ -36,13 +58,33 @@ const Avatar = styled.Image`
   borderRadius: ${AVATAR_RADIUS};
 `;
 
+const username = "jhd8610";
+const firstName = "Jeffrey";
+const lastName = "Degoma";
+const createdAt = "1 day ago";
+const avatar = fakeAvatar;
+
+
+
 function FeedCardHeader() {
   return (
     <Root>
       <AvatarContainer>
-        <Avatar source={{uri: fakeAvatar}} />
+        <Avatar source={{uri: avatar}} />
       </AvatarContainer>
-      <MetaContainer />
+      <MetaContainer>
+        <MetaTopContainer>
+        <MetaFullName>
+          {firstName} {lastName}
+        </MetaFullName>
+          <MetaText style={{marginLeft: 5}}>
+            @{username}
+          </MetaText>
+        </MetaTopContainer>
+        <MetaBottomContainer>
+          <MetaText>{createdAt}</MetaText>
+        </MetaBottomContainer>
+      </MetaContainer>
     </Root>
   )
 }

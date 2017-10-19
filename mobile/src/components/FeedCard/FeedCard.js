@@ -23,7 +23,7 @@ const CardContentText = styled.Text`
   fontSize: 14;
   textAlign: left;
   fontWeight: 500;
-  color: ${props => props.theme.LIGHT_GRAY};
+  color: ${props => props.theme.SECONDARY};
 `;
 
 const text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. '

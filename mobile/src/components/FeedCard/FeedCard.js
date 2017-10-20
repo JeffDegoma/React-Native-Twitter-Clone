@@ -7,16 +7,19 @@ import FeedCardButton from './FeedCardButton'
 
 const Root = styled.View`
   minHeight: 180;
+  width: 100%;
+  padding: 20px;
   backgroundColor: ${props => props.theme.WHITE};
   shadowColor: ${props => props.theme.SECONDARY};
   shadowOffset: 0px 2px;
   shadowRadius: 2;
-  shadowOpacity 0.1;
+  shadowOpacity: 0.1;
+  marginVertical: 5;
 `;
 
 const CardContentContainer = styled.View`
   flex: 1;
-  padding: 10px 20px 10px 5px;
+  padding: 10px 20px 10px 0px;
 `;
 
 const CardContentText = styled.Text`
@@ -26,7 +29,10 @@ const CardContentText = styled.Text`
   color: ${props => props.theme.SECONDARY};
 `;
 
+
+
 const text = 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. '
+
 
 function FeedCard() {
   return (

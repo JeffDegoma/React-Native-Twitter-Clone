@@ -1,4 +1,4 @@
-import React from 'react';
+ import React from 'react';
 import styled from 'styled-components/native';
 
 import { fakeAvatar } from '../../utils/constants';
@@ -18,7 +18,6 @@ const AvatarContainer = styled.View`
   flex: 0.2;
   alignSelf: stretch;
   justifyContent: center;
-  paddingLeft: 10px;
 `;
 //meta container
 const MetaContainer = styled.View`

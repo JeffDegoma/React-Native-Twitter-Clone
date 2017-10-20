@@ -5,10 +5,12 @@ import FeedCard from '../components/FeedCard/FeedCard';
 
 const Root = styled.View`
   backgroundColor: #f2f2f2;
-  flex: 1
-  justify-content: center;
-
+  flex: 1;
+  paddingTop: 10;
 `;
+
+
+const List = styled.ScrollView``
 
 const T = styled.Text ``;
 
@@ -17,7 +19,12 @@ class HomeScreen extends Component {
   render() {
     return (
       <Root>
-        <FeedCard />
+        <List>
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+          <FeedCard />
+        </List>
       </Root>
     );
   }
